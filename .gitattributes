@@ -1,0 +1,4 @@
+driver/Darwin-lib/libbson-static-1.0.a filter=lfs diff=lfs merge=lfs -text
+driver/Darwin-lib/libmongoc-static-1.0.a filter=lfs diff=lfs merge=lfs -text
+driver/Linux-lib/libbson-static-1.0.a filter=lfs diff=lfs merge=lfs -text
+driver/Linux-lib/libmongoc-static-1.0.a filter=lfs diff=lfs merge=lfs -text

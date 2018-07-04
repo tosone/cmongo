@@ -13,11 +13,10 @@ const ContextThreadSafe = C.BSON_CONTEXT_THREAD_SAFE
 const ContextDisableHostCache = C.BSON_CONTEXT_DISABLE_HOST_CACHE
 const ContextDisablePidCache = C.BSON_CONTEXT_DISABLE_PID_CACHE
 
-func NewContext(ctx Context) Context {
+func NewContext(ctx C.bson_context_flags_t) *C.bson_context_t {
 	return C.bson_context_new(ctx)
 }
 
-func NewDefaultContext() Context {
+func NewDefaultContext() *C.bson_context_t {
 	return C.bson_context_get_default()
 }
-
