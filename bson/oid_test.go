@@ -7,7 +7,11 @@ import (
 )
 
 func TestNewOid(t *testing.T) {
-	fmt.Printf("gen oid: %s\n", NewOid(NewContext(ContextNone)))
+	fmt.Printf("gen oid: %s\n", NewOid())
+}
+
+func TestNewOidWithCtx(t *testing.T) {
+	fmt.Printf("gen oid: %s\n", NewOidWithCtx(NewContext(ContextNone)))
 }
 
 func TestNewOidFromStr(t *testing.T) {

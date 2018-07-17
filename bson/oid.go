@@ -6,6 +6,7 @@ package bson
 import "C"
 import "unsafe"
 
+// NewOid ..
 func NewOid() string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)
@@ -15,6 +16,7 @@ func NewOid() string {
 	return C.GoString(str)
 }
 
+// NewOidWithCtx ..
 func NewOidWithCtx(ctx *C.bson_context_t) string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)
@@ -24,6 +26,7 @@ func NewOidWithCtx(ctx *C.bson_context_t) string {
 	return C.GoString(str)
 }
 
+// NewOidFromStr ..
 func NewOidFromStr(origin string) string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)
@@ -34,6 +37,7 @@ func NewOidFromStr(origin string) string {
 	return C.GoString(str)
 }
 
+// NewOidFromData ..
 func NewOidFromData(data []byte) string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)
@@ -44,6 +48,7 @@ func NewOidFromData(data []byte) string {
 	return C.GoString(str)
 }
 
+// NewOidSequence ..
 func NewOidSequence() string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)

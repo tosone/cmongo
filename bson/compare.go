@@ -8,10 +8,12 @@ import (
 	"unsafe"
 )
 
+// Equal ..
 func Equal() {
 
 }
 
+// IsValid ..
 func IsValid(oid string) bool {
 	var cOid = C.CString(oid)
 	defer C.free(unsafe.Pointer(cOid))

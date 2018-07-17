@@ -1,0 +1,33 @@
+{
+  "deadline": "10m",
+  "enable": [
+    "deadcode",
+    "errcheck",
+    "goconst",
+    "gocyclo",
+    "gofmt",
+    "goimports",
+    "golint",
+    "gotype",
+    "ineffassign",
+    "interfacer",
+    "lll",
+    "megacheck",
+    "structcheck",
+    "unconvert",
+    "unparam",
+    "varcheck",
+    "vet",
+    "vetshadow"
+  ],
+  "lineLength": 200,
+  "vendor": true,
+  "vendoredLinters": false,
+  "cyclo": 30,
+  "Linters": {
+    "misspell": {
+      "Command": "misspell -i Unknwon",
+      "Pattern": "*"
+    }
+  }
+}
