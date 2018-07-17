@@ -1,0 +1,18 @@
+language: go
+go:
+  - '1.10.x'
+before_script:
+  - sudo apt-get -qq update
+  - go get -u -v github.com/karalabe/xgo
+  - go get -u -v gopkg.in/alecthomas/gometalinter.v2
+  - gometalinter.v2 --install
+  - go get -u -v github.com/client9/misspell/cmd/misspell
+script:
+  - make lint
+  - make depend
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: make release && ./release2github-linux create
+  on:
+    tags: true
