@@ -52,7 +52,7 @@ func NewOidFromData(data []byte) string {
 func NewOidSequence() string {
 	var cOid C.bson_oid_t
 	var str = new(C.char)
-	C.bson_oid_init_sequence(&cOid, NewContext(ContextThreadSafe))
+	C.bson_oid_init_sequence(&cOid, NewContext(ContextFlagThreadSafe))
 	C.bson_oid_to_string(&cOid, str)
 	return C.GoString(str)
 }

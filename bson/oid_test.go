@@ -11,7 +11,7 @@ func TestNewOid(t *testing.T) {
 }
 
 func TestNewOidWithCtx(t *testing.T) {
-	fmt.Printf("gen oid: %s\n", NewOidWithCtx(NewContext(ContextNone)))
+	fmt.Printf("gen oid: %s\n", NewOidWithCtx(NewContext(ContextFlagNone)))
 }
 
 func TestNewOidFromStr(t *testing.T) {
