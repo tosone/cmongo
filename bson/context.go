@@ -11,21 +11,23 @@ type Context C.bson_context_t
 // ContextFlag ..
 type ContextFlag C.bson_context_flags_t
 
-// ContextNone ..
-const ContextNone = C.BSON_CONTEXT_NONE
+var (
+	// ContextFlagNone ..
+	ContextFlagNone ContextFlag = C.BSON_CONTEXT_NONE
 
-// ContextThreadSafe ..
-const ContextThreadSafe = C.BSON_CONTEXT_THREAD_SAFE
+	// ContextFlagThreadSafe ..
+	ContextFlagThreadSafe ContextFlag = C.BSON_CONTEXT_THREAD_SAFE
 
-// ContextDisableHostCache ..
-const ContextDisableHostCache = C.BSON_CONTEXT_DISABLE_HOST_CACHE
+	// ContextFlagDisableHostCache ..
+	ContextFlagDisableHostCache ContextFlag = C.BSON_CONTEXT_DISABLE_HOST_CACHE
 
-// ContextDisablePidCache ..
-const ContextDisablePidCache = C.BSON_CONTEXT_DISABLE_PID_CACHE
+	// ContextFlagDisablePidCache ..
+	ContextFlagDisablePidCache ContextFlag = C.BSON_CONTEXT_DISABLE_PID_CACHE
+)
 
 // NewContext ..
-func NewContext(ctx C.bson_context_flags_t) *C.bson_context_t {
-	return C.bson_context_new(ctx)
+func NewContext(ctx ContextFlag) *C.bson_context_t {
+	return C.bson_context_new(C.bson_context_flags_t(ctx))
 }
 
 // NewDefaultContext ..
