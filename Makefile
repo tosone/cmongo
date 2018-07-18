@@ -31,3 +31,7 @@ $(OSName):
 
 lint:
 	gometalinter.v2 ./...
+
+test:
+	go test ./...
+
