@@ -6,6 +6,9 @@ package bson
 import "C"
 import "unsafe"
 
+// Oid ..
+type Oid C.bson_oid_t
+
 // NewOid ..
 func NewOid() string {
 	var cOid C.bson_oid_t
